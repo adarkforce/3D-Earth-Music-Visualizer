@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Earth Music Visualizer</title>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <div class="infoText upload">
+      <h2 class="text">WARNING: PHOTOSENSITIVITY/EPILEPSY SEIZURES</h2>
+      <h2 class="text">
+        A very small percentage of individuals may experience epileptic seizures
+        or blackouts when exposed to certain light patterns or flashing lights.
+        Do not continue if you are an individual at risk.
+      </h2>
+      <h2 id="messageText" class="text">
+        Click on the screen and drag and drop on the browser a bass HEAVY
+        song...
+      </h2>
+    </div>
+    <audio autoplay controls id="audioPlayer" playsinline>
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <form id="inputForm">
+      <input id="fileInput" type="file" hidden />
+    </form>
+  </body>
+</html>
