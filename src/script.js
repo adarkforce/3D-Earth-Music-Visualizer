@@ -52,6 +52,7 @@ let audioCtx = null;
 let analyser = null;
 let dataArray = null;
 let bufferLength = 0;
+
 function createAudioContext() {
   if (source) {
     source.disconnect();
@@ -136,8 +137,8 @@ debugObject.uWaterFrequencyY = { value: 2 };
 debugObject.cloudSpeed = { value: 0.1 };
 debugObject.uLightPos = { value: new THREE.Vector3(0.0) };
 debugObject.emissiveIntensity = 100;
-debugObject.earthSpin = 10;
-debugObject.lightsTriggerThresh = 0.8;
+debugObject.earthSpin = 6;
+debugObject.lightsTriggerThresh = 1;
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -514,7 +515,7 @@ gui
 gui
   .add(debugObject, "lightsTriggerThresh")
   .min(0.01)
-  .max(2)
+  .max(4)
   .step(0.001)
   .name("Lights threshold")
   .onChange((val) => (debugObject.lightsTriggerThresh = val));
@@ -576,12 +577,12 @@ const tick = () => {
   if (dataArray && !audio.paused) {
     const subVal = dataArray[2];
     const bassVal = dataArray[3];
-    const midVal = dataArray[50];
+    const midVal = dataArray[10];
     const midHighVal = dataArray[70];
     const highVal = dataArray[200];
     const superHighVal = dataArray[250];
     analyser.getByteFrequencyData(dataArray);
-    if (Math.pow(bassVal / 100, 10) / 5000 > debugObject.lightsTriggerThresh) {
+    if (Math.pow(midVal / 100, 10) / 50 > debugObject.lightsTriggerThresh) {
       sunColor.setHex(Math.floor((Math.random() * 16777215) & 0xff00ff));
       sun.material.emissive.copy(sunColor);
       sun.material.color.copy(sunColor);
@@ -589,10 +590,10 @@ const tick = () => {
       sun.material.needsUpdate = true;
     }
     debugObject.uWaterElevation.value =
-      (Math.pow(bassVal / 100, 10) / 10000) * debugObject.waterElevation;
+      (Math.pow(subVal / 100, 10) / 10000) * debugObject.waterElevation;
     clouds.rotation.y = elapsedTime * debugObject.cloudSpeed.value;
-    clouds.rotation.y += Math.pow(subVal / 100, 10) / 10000;
-    debugObject.uWaterFrequencyX.value += Math.pow(midVal / 100, 10) / 10000;
+    clouds.rotation.y += Math.pow(bassVal / 100, 10) / 10000;
+    debugObject.uWaterFrequencyX.value += Math.pow(midVal / 100, 10) / 100000;
     debugObject.uWaterFrequencyY.value += Math.pow(highVal / 100, 9) / 1000;
     debugObject.uWaterFrequencyZ.value +=
       Math.pow(superHighVal / 100, 9) / 1000;
