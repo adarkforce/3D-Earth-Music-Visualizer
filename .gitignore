@@ -3,3 +3,6 @@
 .cache
 package-lock.json
 /dist
+/.firebase
+.firebaserc
+firebase.json
