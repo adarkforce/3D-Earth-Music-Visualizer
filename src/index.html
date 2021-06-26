@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,23 +6,43 @@
     <meta property="og:title" content="3D Earth Music Visualizer" />
     <meta
       property="og:description"
-      content="A 3D online earth music visualizer!"
+      content="A 3D online earth music visualizer - Online and FREE! Drop the beat and enjoy the show!"
     />
     <meta property="og:url" content="https://earth-music-visualizer.web.app/" />
     <meta
+      property="og:image:secure_url"
+      content="https://i.ibb.co/Rz5yvpP/Screenshot-14.png"
+    />
+    <meta
+      property="og:image:url"
+      content="https://i.ibb.co/Rz5yvpP/Screenshot-14.png"
+    />
+    <meta
       property="og:image"
-      content="https://camo.githubusercontent.com/3fe2266b5442363332a481062d519a796a6850dd0d8b69967cfeb5e1ae603081/68747470733a2f2f692e6962622e636f2f527a35797670502f53637265656e73686f742d31342e706e67"
+      content="https://i.ibb.co/Rz5yvpP/Screenshot-14.png"
     />
     <meta property="”og:image:width”" content="988" />
     <meta property="og:image:height" content="700" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="A 3D online earth music visualizer!"
+    />
+    <meta
+      name="google-site-verification"
+      content="EWjbA_MXjToGd_9B_wPeT4BgDJAhOMy59UMpTBT7oas"
+    />
     <meta property="og:type" content="website" />
     <meta name="pinterest" content="nohover" />
     <title>3D Earth Music Visualizer</title>
-    <meta name="description" content="A 3D online earth music visualizer!" />
+    <meta
+      name="description"
+      content="A 3D online earth music visualizer - Online and FREE! Drop the beat and enjoy the show!"
+    />
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="3D Earth Music Visualizer, Antonio Della Fortuna, Three js, Shaders, WebGL, OpenGL, Online Music Visualizer"
+      content="3D Earth Music Visualizer, online music visualizer, free online music visualizer, threejs, shaders, webgl, opengl, antonio della fortuna"
     />
     <link rel="canonical" href="https://earth-music-visualizer.web.app/" />
     <link
@@ -54,7 +74,17 @@
         Click on the screen and drag and drop on the browser a bass HEAVY
         song...
       </h2>-->
-      <button id="loadSongButton">Select a song</button>
+      <button id="uploadSongButton" class="loadSongButton">
+        Select a song
+      </button>
+      <h2 class="text">or</h2>
+      <button
+        title="Music: https://www.bensound.com"
+        id="playDefaultButton"
+        class="loadSongButton"
+      >
+        Play default song
+      </button>
     </div>
     <audio autoplay controls id="audioPlayer" playsinline>
       Your browser does not support the <code>audio</code> element.
