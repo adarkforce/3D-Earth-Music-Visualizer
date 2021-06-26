@@ -25,7 +25,8 @@ function isOnMobile() {
  * File Input
  */
 
-const uploadTrackButton = document.querySelector("#loadSongButton");
+const uploadTrackButton = document.querySelector("#uploadSongButton");
+const playDefaultButton = document.querySelector("#playDefaultButton");
 
 uploadTrackButton.onclick = (ev) => {
   let fI = document.querySelector("#fileInput");
@@ -35,8 +36,16 @@ uploadTrackButton.onclick = (ev) => {
     audio.src = window.URL.createObjectURL(file);
     audio.load();
     uploadTrackButton.style.display = "none";
+    playDefaultButton.style.display = "none";
   };
   fI.click();
+};
+
+playDefaultButton.onclick = (ev) => {
+  audio.src = "bensound-dubstep.mp3";
+  audio.load();
+  uploadTrackButton.style.display = "none";
+  playDefaultButton.style.display = "none";
 };
 
 /**

@@ -76,14 +76,14 @@ body {
   font-size: 10px;
   line-height: 16px;
 }
-#loadSongButton:hover {
+.loadSongButton:hover {
   background-color: rgba(44, 0, 65, 0.5);
 }
-#loadSongButton {
+.loadSongButton {
   padding: 15px;
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   border: none;
   border: solid 1px white;
   background-color: rgba(174, 0, 255, 0.5);
