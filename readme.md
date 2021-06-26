@@ -1,5 +1,9 @@
 # Three.js 3D Earth Music Visualizer
 
+[Link to live website](https://earth-music-visualizer.web.app/)
+
+![Site Preview](https://i.ibb.co/Rz5yvpP/Screenshot-14.png)
+
 ## Setup
 
 Download [Node.js](https://nodejs.org/en/download/).
