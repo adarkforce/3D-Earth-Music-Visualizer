@@ -25,24 +25,20 @@ function isOnMobile() {
  * File Input
  */
 
-const overlay = document.querySelector(".upload");
-overlay.style.pointerEvents = "none";
+const uploadTrackButton = document.querySelector("#loadSongButton");
 
-if (isOnMobile()) {
-  let message = document.querySelector("#messageText");
-  message.innerHTML = "Click on the screen and choose a bass HEAVY song...";
-  overlay.style.pointerEvents = "all";
-  overlay.onclick = (ev) => {
-    let fI = document.querySelector("#fileInput");
-    fI.onchange = (ev) => {
-      let file = ev.target.files[0];
-      if (!file.type.startsWith("audio")) return;
-      audio.src = window.URL.createObjectURL(file);
-      audio.load();
-    };
-    fI.click();
+uploadTrackButton.onclick = (ev) => {
+  let fI = document.querySelector("#fileInput");
+  fI.onchange = (ev) => {
+    let file = ev.target.files[0];
+    if (!file.type.startsWith("audio")) return;
+    audio.src = window.URL.createObjectURL(file);
+    audio.load();
+    uploadTrackButton.style.display = "none";
   };
-}
+  fI.click();
+};
+
 /**
  * Audio Analyzer
  */
@@ -66,6 +62,7 @@ function createAudioContext() {
   dataArray = new Uint8Array(bufferLength);
   analyser.getByteFrequencyData(dataArray);
   source = audioCtx.createMediaElementSource(audio);
+
   source.connect(analyser);
   analyser.connect(audioCtx.destination);
 }

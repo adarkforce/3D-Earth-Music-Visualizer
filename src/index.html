@@ -6,6 +6,15 @@
     <title>3D Earth Music Visualizer</title>
   </head>
   <body>
+    <div class="signText">
+      <h3>Visualizer by</h3>
+      <a
+        id="linkedinLink"
+        href="https://www.linkedin.com/in/antonio-della-fortuna/"
+      >
+        Antonio Della Fortuna
+      </a>
+    </div>
     <canvas class="webgl"></canvas>
 
     <div class="infoText upload">
@@ -15,10 +24,11 @@
         or blackouts when exposed to certain light patterns or flashing lights.
         Do not continue if you are an individual at risk.
       </h2>
-      <h2 id="messageText" class="text">
+      <!--<h2 id="messageText" class="text">
         Click on the screen and drag and drop on the browser a bass HEAVY
         song...
-      </h2>
+      </h2>-->
+      <button id="loadSongButton">Select a song</button>
     </div>
     <audio autoplay controls id="audioPlayer" playsinline>
       Your browser does not support the <code>audio</code> element.

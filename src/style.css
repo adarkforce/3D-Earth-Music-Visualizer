@@ -65,6 +65,39 @@ body {
   height: 0;
 }
 
+.signText {
+  position: fixed;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  margin: 10px;
+  color: white;
+  font-weight: 100;
+  font-size: 10px;
+  line-height: 16px;
+}
+#loadSongButton:hover {
+  background-color: rgba(44, 0, 65, 0.5);
+}
+#loadSongButton {
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 20px;
+  border: none;
+  border: solid 1px white;
+  background-color: rgba(174, 0, 255, 0.5);
+  transition: background-color 300ms ease-in-out;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#linkedinLink {
+  font-size: 14px;
+  color: white;
+}
 @media only screen and (max-width: 400px) {
   .infoText {
     font-size: 10px;
