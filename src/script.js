@@ -27,6 +27,14 @@ function isOnMobile() {
 
 const uploadTrackButton = document.querySelector("#uploadSongButton");
 const playDefaultButton = document.querySelector("#playDefaultButton");
+const signText = document.querySelector(".signText");
+signText.style.display = "none";
+
+function hideWarningAndShowSign() {
+  uploadTrackButton.style.display = "none";
+  playDefaultButton.style.display = "none";
+  signText.style.display = "block";
+}
 
 uploadTrackButton.onclick = (ev) => {
   let fI = document.querySelector("#fileInput");
@@ -35,8 +43,7 @@ uploadTrackButton.onclick = (ev) => {
     if (!file.type.startsWith("audio")) return;
     audio.src = window.URL.createObjectURL(file);
     audio.load();
-    uploadTrackButton.style.display = "none";
-    playDefaultButton.style.display = "none";
+    hideWarningAndShowSign();
   };
   fI.click();
 };
@@ -44,8 +51,7 @@ uploadTrackButton.onclick = (ev) => {
 playDefaultButton.onclick = (ev) => {
   audio.src = "bensound-dubstep.mp3";
   audio.load();
-  uploadTrackButton.style.display = "none";
-  playDefaultButton.style.display = "none";
+  hideWarningAndShowSign();
 };
 
 /**
